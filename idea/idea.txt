@@ -1,0 +1,49 @@
+FASE 1 — Base
+
+Crear proyecto Next.js
+Limpiar proyecto inicial
+Crear estructura
+Configurar CSS
+Navbar
+Footer
+
+FASE 2 — Diseño
+
+Home
+Catálogo
+WineCard
+Página individual del vino
+Responsive mobile
+
+FASE 3 — Base de datos
+
+Crear Supabase
+Crear tabla vinos
+Conectar Next.js
+Traer vinos
+Mostrar vinos reales
+
+FASE 4 — Catálogo
+
+Buscador
+Filtros
+Ordenamiento
+Disponibilidad
+
+FASE 5 — Recomendador
+
+Preguntas
+Estado de respuestas
+Sistema de puntuación
+Resultados
+Enlace a cada vino
+WhatsApp
+
+FASE 6 — Pulido
+
+Animaciones
+Loading states
+SEO
+Responsive
+Optimización de imágenes
+Deploy

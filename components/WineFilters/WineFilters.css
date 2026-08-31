@@ -1,0 +1,251 @@
+.wine-filters {
+  width: 100%;
+}
+
+/* =========================================
+     SEARCH
+  ========================================= */
+
+.wine-filters__search {
+  position: relative;
+
+  width: 100%;
+
+  margin-bottom: 28px;
+}
+
+.wine-filters__search input {
+  width: 100%;
+  height: 52px;
+
+  padding: 0 50px 0 0;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  color: var(--color-text);
+
+  background: transparent;
+
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+
+  outline: none;
+
+  transition: border-color 0.2s ease;
+}
+
+.wine-filters__search input::placeholder {
+  color: var(--color-text-light);
+}
+
+.wine-filters__search input:focus {
+  border-color: var(--color-primary);
+}
+
+.wine-filters__search-icon {
+  position: absolute;
+
+  right: 8px;
+  top: 50%;
+
+  width: 20px;
+  height: 20px;
+
+  transform: translateY(-50%);
+
+  color: var(--color-primary);
+
+  pointer-events: none;
+}
+
+/* =========================================
+     TYPE
+  ========================================= */
+
+.wine-filters__types {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 28px;
+
+  flex-wrap: wrap;
+}
+
+.wine-filters__type {
+  padding: 10px 15px;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  color: var(--color-text-light);
+
+  background: transparent;
+
+  border: 1px solid transparent;
+  border-radius: 2px;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.wine-filters__type:hover {
+  color: var(--color-primary);
+}
+
+.wine-filters__type--active {
+  color: var(--color-primary);
+
+  background: rgba(121, 0, 39, 0.05);
+
+  border-color: rgba(121, 0, 39, 0.2);
+}
+
+/* =========================================
+     ADVANCED
+  ========================================= */
+
+.wine-filters__advanced {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 12px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid var(--color-border);
+}
+
+/* =========================================
+     FIELD
+  ========================================= */
+
+.wine-filters__field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.wine-filters__field label {
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  color: var(--color-text-light);
+}
+
+.wine-filters__field select,
+.wine-filters__field input {
+  width: 100%;
+  height: 43px;
+
+  padding: 0 12px;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  color: var(--color-text);
+
+  background: transparent;
+
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+
+  outline: none;
+
+  transition: border-color 0.2s ease;
+}
+
+.wine-filters__field select {
+  cursor: pointer;
+}
+
+.wine-filters__field select:focus,
+.wine-filters__field input:focus {
+  border-color: var(--color-primary);
+}
+
+.wine-filters__field input::placeholder {
+  color: var(--color-text-light);
+}
+
+/* =========================================
+     CLEAR
+  ========================================= */
+
+.wine-filters__clear {
+  margin-top: 18px;
+  padding: 0;
+
+  font-family: inherit;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  color: var(--color-primary);
+
+  background: transparent;
+
+  border: none;
+
+  cursor: pointer;
+}
+
+/* =========================================
+     MOBILE
+  ========================================= */
+
+@media (max-width: 700px) {
+  .wine-filters__search {
+    margin-bottom: 20px;
+  }
+
+  .wine-filters__search input {
+    height: 48px;
+
+    font-size: 13px;
+  }
+
+  .wine-filters__types {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 6px;
+
+    margin-bottom: 22px;
+  }
+
+  .wine-filters__type {
+    width: 100%;
+
+    padding: 11px 8px;
+
+    border-color: var(--color-border);
+  }
+
+  .wine-filters__advanced {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .wine-filters__advanced {
+    grid-template-columns: 1fr;
+  }
+}

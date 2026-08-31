@@ -1,0 +1,390 @@
+.recommender-cta {
+  position: relative;
+
+  margin-top: 20px;
+
+  overflow: hidden;
+
+  background: var(--color-primary);
+
+  color: #ffffff;
+}
+
+/* =========================================
+     CONTAINER
+  ========================================= */
+
+.recommender-cta__container {
+  position: relative;
+  z-index: 2;
+
+  width: min(1200px, 92%);
+
+  min-height: 620px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+
+  align-items: center;
+
+  gap: 60px;
+
+  padding: 90px 0;
+}
+
+/* =========================================
+     CONTENT
+  ========================================= */
+
+.recommender-cta__content {
+  max-width: 570px;
+}
+
+.recommender-cta__eyebrow {
+  margin-bottom: 22px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  color: var(--color-cream);
+}
+
+.recommender-cta__title {
+  margin-bottom: 30px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(48px, 5.5vw, 72px);
+  font-weight: 400;
+
+  line-height: 0.98;
+  letter-spacing: -3px;
+
+  color: #ffffff;
+}
+
+.recommender-cta__description {
+  max-width: 480px;
+
+  margin-bottom: 36px;
+
+  font-size: 16px;
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* =========================================
+     BUTTON
+  ========================================= */
+
+.recommender-cta__button {
+  min-height: 50px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 25px;
+
+  padding: 0 22px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  color: var(--color-primary);
+
+  background: #ffffff;
+
+  border-radius: 3px;
+
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.recommender-cta__button span {
+  font-size: 17px;
+
+  transition: transform 0.2s ease;
+}
+
+.recommender-cta__button:hover {
+  color: var(--color-primary);
+
+  background: var(--color-cream);
+
+  transform: translateY(-2px);
+}
+
+.recommender-cta__button:hover span {
+  transform: translate(2px, -2px);
+}
+
+/* =========================================
+     VISUAL
+  ========================================= */
+
+.recommender-cta__visual {
+  position: relative;
+
+  width: 100%;
+  max-width: 500px;
+
+  aspect-ratio: 1;
+
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================
+     CIRCLES
+  ========================================= */
+
+.recommender-cta__circle {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.recommender-cta__circle--large {
+  width: 90%;
+  height: 90%;
+}
+
+.recommender-cta__circle--medium {
+  width: 66%;
+  height: 66%;
+
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.recommender-cta__circle--small {
+  width: 42%;
+  height: 42%;
+
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================
+     DECORATIVE GLASS
+  ========================================= */
+
+.recommender-cta__glass {
+  position: relative;
+
+  width: 130px;
+  height: 280px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  opacity: 0.85;
+
+  transform: translateY(10px);
+}
+
+/* Bowl */
+
+.recommender-cta__glass-bowl {
+  position: relative;
+
+  width: 110px;
+  height: 145px;
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+
+  border-bottom-left-radius: 45%;
+  border-bottom-right-radius: 45%;
+
+  overflow: hidden;
+}
+
+.recommender-cta__glass-bowl::after {
+  content: "";
+
+  position: absolute;
+
+  left: 8px;
+  right: 8px;
+  bottom: 0;
+
+  height: 48%;
+
+  background: rgba(232, 216, 189, 0.18);
+
+  border-top: 1px solid rgba(232, 216, 189, 0.35);
+}
+
+/* Stem */
+
+.recommender-cta__glass-stem {
+  width: 1px;
+  height: 95px;
+
+  background: rgba(255, 255, 255, 0.55);
+}
+
+/* Base */
+
+.recommender-cta__glass-base {
+  width: 80px;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.55);
+}
+
+/* =========================================
+     DETAILS
+  ========================================= */
+
+.recommender-cta__number {
+  position: absolute;
+
+  top: 20px;
+  right: 25px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 18px;
+  font-style: italic;
+
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.recommender-cta__label {
+  position: absolute;
+
+  right: -45px;
+  bottom: 80px;
+
+  writing-mode: vertical-rl;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* =========================================
+     DECORATIVE BACKGROUND
+  ========================================= */
+
+.recommender-cta__background {
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  top: 50%;
+  right: -250px;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+/* =========================================
+     TABLET
+  ========================================= */
+
+@media (max-width: 900px) {
+  .recommender-cta__container {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+
+    padding: 90px 0;
+  }
+
+  .recommender-cta__content {
+    max-width: 650px;
+  }
+
+  .recommender-cta__visual {
+    margin: 0 auto;
+
+    max-width: 430px;
+  }
+
+  .recommender-cta__label {
+    right: 0;
+  }
+}
+
+/* =========================================
+     MOBILE
+  ========================================= */
+
+@media (max-width: 600px) {
+  .recommender-cta__container {
+    width: 90%;
+
+    padding: 70px 0;
+  }
+
+  .recommender-cta__eyebrow {
+    margin-bottom: 18px;
+
+    font-size: 10px;
+  }
+
+  .recommender-cta__title {
+    margin-bottom: 24px;
+
+    font-size: clamp(44px, 12vw, 58px);
+
+    letter-spacing: -2px;
+  }
+
+  .recommender-cta__description {
+    margin-bottom: 30px;
+
+    font-size: 15px;
+  }
+
+  .recommender-cta__button {
+    width: 100%;
+  }
+
+  .recommender-cta__visual {
+    max-width: 330px;
+  }
+
+  .recommender-cta__glass {
+    transform: scale(0.8);
+  }
+
+  .recommender-cta__number {
+    top: 5px;
+    right: 10px;
+  }
+
+  .recommender-cta__label {
+    right: -5px;
+    bottom: 45px;
+
+    font-size: 7px;
+  }
+}
