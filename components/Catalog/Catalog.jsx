@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
 
 import WineCard from "../WineCard/WineCard";
 import WineFilters from "../WineFilters/WineFilters";
@@ -10,15 +9,7 @@ import wines from "../../data/wines";
 
 import "./Catalog.css";
 
-export default function Catalog() {
-  const searchParams = useSearchParams();
-
-  const typeFromUrl = searchParams.get("tipo");
-
-  const validTypes = ["todos", "tinto", "blanco", "rosado", "espumante"];
-
-  const initialType = validTypes.includes(typeFromUrl) ? typeFromUrl : "todos";
-
+export default function Catalog({ initialType = "todos" }) {
   /* =====================================
      FILTER STATE
   ===================================== */
