@@ -18,6 +18,10 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+
+    occasions: ["cena", "asado", "reunion", "pareja", "regalo"],
+
+    featured: true,
   },
 
   {
@@ -39,6 +43,8 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["cena", "pareja", "pescados", "pastas", "reunion"],
+    featured: true,
   },
 
   {
@@ -60,6 +66,8 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["cena", "asado", "pareja", "reunion", "regalo"],
+    featured: true,
   },
 
   {
@@ -81,6 +89,7 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["cena", "asado", "pareja", "regalo"],
   },
 
   {
@@ -102,6 +111,8 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["asado", "cena", "pastas", "reunion", "amigos"],
+    featured: true,
   },
 
   {
@@ -123,6 +134,8 @@ const wines = [
       sweetness: "dulce",
       acidity: "media",
     },
+    occasions: ["postres", "pareja", "regalo", "solo", "celebracion"],
+    featured: true,
   },
 
   {
@@ -144,6 +157,8 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["cena", "asado", "reunion", "pareja", "amigos"],
+    featured: true,
   },
 
   {
@@ -165,6 +180,8 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["cena", "pareja", "pescados", "pastas", "regalo"],
+    featured: true,
   },
 
   {
@@ -186,6 +203,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["pareja", "reunion", "amigos", "celebracion", "solo"],
+
+    featured: false,
   },
 
   {
@@ -207,6 +227,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["cena", "asado", "pareja", "regalo"],
+
+    featured: false,
   },
   {
     id: 11,
@@ -227,6 +250,8 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["cena", "pareja", "pescados", "pastas", "reunion"],
+    featured: false,
   },
 
   {
@@ -248,6 +273,8 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["cena", "pareja", "pescados", "pastas", "regalo"],
+    featured: false,
   },
 
   {
@@ -269,6 +296,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["cena", "pareja", "pescados", "regalo"],
+
+    featured: false,
   },
 
   {
@@ -290,6 +320,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["cena", "pescados", "pastas", "pareja", "reunion"],
+
+    featured: false,
   },
 
   {
@@ -311,6 +344,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["cena", "pescados", "pastas", "reunion", "solo"],
+
+    featured: false,
   },
 
   {
@@ -332,6 +368,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["cena", "pareja", "reunion", "pescados", "amigos"],
+
+    featured: false,
   },
 
   {
@@ -353,6 +392,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["cena", "pareja", "pescados", "pastas", "reunion"],
+
+    featured: false,
   },
 
   {
@@ -374,6 +416,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["cena", "pareja", "pescados", "regalo", "celebracion"],
+
+    featured: false,
   },
 
   {
@@ -395,6 +440,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["cena", "pareja", "pastas", "pescados", "reunion"],
+
+    featured: false,
   },
 
   {
@@ -416,6 +464,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["reunion", "amigos", "pescados", "pastas", "solo"],
+
+    featured: false,
   },
 
   {
@@ -437,6 +488,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["reunion", "amigos", "pescados", "solo"],
+
+    featured: false,
   },
 
   {
@@ -458,6 +512,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["reunion", "amigos", "pescados", "solo"],
+
+    featured: false,
   },
 
   {
@@ -479,6 +536,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["reunion", "amigos", "pescados", "pastas", "solo"],
+
+    featured: false,
   },
 
   {
@@ -500,6 +560,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["cena", "asado", "pareja", "reunion", "regalo"],
+
+    featured: false,
   },
 
   {
@@ -521,6 +584,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["cena", "asado", "reunion", "pareja", "amigos"],
+
+    featured: false,
   },
 
   {
@@ -542,6 +608,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["cena", "asado", "pareja", "regalo"],
+
+    featured: false,
   },
 
   {
@@ -563,6 +632,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["cena", "asado", "pareja", "reunion", "regalo"],
+
+    featured: false,
   },
 
   {
@@ -584,6 +656,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["cena", "asado", "pareja", "regalo", "celebracion"],
+
+    featured: false,
   },
 
   {
@@ -605,6 +680,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["cena", "asado", "reunion", "pareja", "amigos"],
+
+    featured: false,
   },
 
   {
@@ -626,6 +704,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["cena", "asado", "pareja", "regalo", "celebracion"],
+
+    featured: false,
   },
 
   {
@@ -647,6 +728,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["cena", "asado", "pareja", "regalo"],
+
+    featured: false,
   },
 
   {
@@ -668,6 +752,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["cena", "asado", "reunion", "pareja", "regalo"],
+
+    featured: false,
   },
 
   {
@@ -689,6 +776,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["cena", "asado", "reunion", "pareja", "amigos"],
+
+    featured: false,
   },
 
   {
@@ -710,6 +800,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["reunion", "amigos", "asado", "pastas", "solo"],
+
+    featured: false,
   },
 
   {
@@ -731,6 +824,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["asado", "cena", "pastas", "reunion", "amigos"],
+
+    featured: false,
   },
 
   {
@@ -752,6 +848,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["asado", "cena", "pareja", "reunion", "regalo"],
+
+    featured: false,
   },
 
   {
@@ -773,6 +872,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["asado", "cena", "pareja", "reunion", "regalo"],
+
+    featured: false,
   },
 
   {
@@ -794,6 +896,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["asado", "cena", "reunion", "pareja", "regalo"],
+
+    featured: false,
   },
 
   {
@@ -815,6 +920,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["asado", "cena", "reunion", "pareja", "regalo"],
+
+    featured: false,
   },
 
   {
@@ -836,6 +944,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["asado", "cena", "pareja", "regalo"],
+
+    featured: false,
   },
 
   {
@@ -857,6 +968,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["asado", "cena", "reunion", "pareja", "amigos"],
+
+    featured: false,
   },
 
   {
@@ -878,6 +992,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["asado", "cena", "pareja", "reunion", "regalo"],
+
+    featured: false,
   },
 
   {
@@ -899,6 +1016,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["reunion", "asado", "pastas", "amigos", "cena"],
+
+    featured: false,
   },
 
   {
@@ -920,6 +1040,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["reunion", "asado", "pastas", "amigos", "solo"],
+
+    featured: false,
   },
 
   {
@@ -941,6 +1064,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["cena", "pareja", "pastas", "reunion", "regalo"],
+
+    featured: false,
   },
 
   {
@@ -962,6 +1088,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["cena", "pareja", "pastas", "pescados", "reunion"],
+
+    featured: false,
   },
 
   {
@@ -983,6 +1112,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["cena", "pareja", "pastas", "pescados", "solo"],
+
+    featured: false,
   },
 
   {
@@ -1004,6 +1136,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["asado", "cena", "pastas", "reunion", "amigos"],
+
+    featured: false,
   },
 
   {
@@ -1025,6 +1160,9 @@ const wines = [
       sweetness: "seco",
       acidity: "media",
     },
+    occasions: ["asado", "cena", "pareja", "reunion", "regalo"],
+
+    featured: false,
   },
 
   {
@@ -1046,6 +1184,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["reunion", "amigos", "pescados", "pastas", "solo"],
+
+    featured: false,
   },
 
   {
@@ -1067,6 +1208,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["reunion", "amigos", "pescados", "solo", "pareja"],
+
+    featured: false,
   },
 
   {
@@ -1088,6 +1232,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["reunion", "amigos", "pescados", "pareja", "solo"],
+
+    featured: false,
   },
 
   {
@@ -1109,6 +1256,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["pescados", "reunion", "amigos", "pastas", "solo"],
+
+    featured: false,
   },
 
   {
@@ -1130,6 +1280,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["pescados", "cena", "reunion", "pareja", "amigos"],
+
+    featured: false,
   },
 
   {
@@ -1151,6 +1304,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["pescados", "reunion", "amigos", "pastas", "solo"],
+
+    featured: false,
   },
 
   {
@@ -1172,6 +1328,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["pescados", "cena", "pareja", "reunion", "amigos"],
+
+    featured: false,
   },
 
   {
@@ -1193,6 +1352,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["celebracion", "pareja", "regalo", "reunion", "amigos"],
+
+    featured: false,
   },
 
   {
@@ -1214,6 +1376,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["celebracion", "pareja", "reunion", "amigos", "regalo"],
+
+    featured: false,
   },
 
   {
@@ -1235,6 +1400,9 @@ const wines = [
       sweetness: "seco",
       acidity: "alta",
     },
+    occasions: ["celebracion", "pareja", "regalo", "cena", "reunion"],
+
+    featured: false,
   },
 
   {
@@ -1256,6 +1424,10 @@ const wines = [
       sweetness: "dulce",
       acidity: "media",
     },
+
+    occasions: ["postres", "pareja", "regalo", "celebracion", "solo"],
+
+    featured: false,
   },
 ];
 

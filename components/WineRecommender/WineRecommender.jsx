@@ -7,91 +7,15 @@ import Link from "next/link";
 import wines from "../../data/wines";
 
 import "./WineRecommender.css";
-
-const steps = [
-  {
-    id: "type",
-    title: "¿Qué tipo de vino te gustaría?",
-    description: "Elegí el estilo que más te guste.",
-  },
-  {
-    id: "body",
-    title: "¿Qué intensidad preferís?",
-    description: "Desde algo ligero y fresco hasta un vino con más presencia.",
-  },
-  {
-    id: "sweetness",
-    title: "¿Cómo lo preferís?",
-    description: "Elegí el nivel de dulzor que más disfrutás.",
-  },
-  {
-    id: "price",
-    title: "¿Cuánto querés gastar?",
-    description: "Indicá aproximadamente cuánto querés invertir.",
-  },
-];
-
-const typeOptions = [
-  {
-    value: "tinto",
-    label: "Tinto",
-    description: "Intensos, elegantes y con carácter.",
-  },
-  {
-    value: "blanco",
-    label: "Blanco",
-    description: "Frescos, aromáticos y equilibrados.",
-  },
-  {
-    value: "rosado",
-    label: "Rosado",
-    description: "Frescos, frutales y versátiles.",
-  },
-  {
-    value: "espumante",
-    label: "Espumante",
-    description: "Frescos, elegantes y especiales.",
-  },
-];
-
-const bodyOptions = [
-  {
-    value: "ligero",
-    label: "Ligero",
-    description: "Fresco y fácil de tomar.",
-  },
-  {
-    value: "medio",
-    label: "Medio",
-    description: "Equilibrado y versátil.",
-  },
-  {
-    value: "intenso",
-    label: "Intenso",
-    description: "Con cuerpo y mucha presencia.",
-  },
-];
-
-const sweetnessOptions = [
-  {
-    value: "seco",
-    label: "Seco",
-    description: "Sin sensación dulce.",
-  },
-  {
-    value: "medio",
-    label: "Equilibrado",
-    description: "Un punto intermedio.",
-  },
-  {
-    value: "dulce",
-    label: "Dulce",
-    description: "Con una sensación más dulce.",
-  },
-];
-
-const MIN_PRICE = 10000;
-const MAX_PRICE = 60000;
+import {
+  steps,
+  occasionOptions,
+  typeOptions,
+  bodyOptions,
+  sweetnessOptions,
+  MIN_PRICE,
+  MAX_PRICE,
+} from "./utils/recommenderUtils";
 
 export default function WineRecommender() {
   const [step, setStep] = useState(0);
@@ -100,6 +24,7 @@ export default function WineRecommender() {
     type: "",
     body: "",
     sweetness: "",
+    occasion: "",
     price: 30000,
   });
 
@@ -136,6 +61,7 @@ export default function WineRecommender() {
       type: "",
       body: "",
       sweetness: "",
+      occasion: "",
       price: 30000,
     });
 
@@ -155,6 +81,10 @@ export default function WineRecommender() {
       return Boolean(answers.sweetness);
     }
 
+    if (currentStep.id === "occasion") {
+      return Boolean(answers.occasion);
+    }
+
     return true;
   };
 
@@ -165,33 +95,69 @@ export default function WineRecommender() {
       .map((wine) => {
         let score = 0;
 
-        if (wine.type.toLowerCase() === answers.type.toLowerCase()) {
-          score += 5;
+        // ==============================
+        // TIPO — 20%
+        // ==============================
+
+        if (wine.type?.toLowerCase() === answers.type?.toLowerCase()) {
+          score += 20;
         }
 
-        if (
-          wine.characteristics?.body?.toLowerCase() ===
-          answers.body.toLowerCase()
+        // ==============================
+        // CUERPO — 15%
+        // ==============================
+
+        const wineBody = wine.characteristics?.body?.toLowerCase();
+        const userBody = answers.body?.toLowerCase();
+
+        if (wineBody === userBody) {
+          score += 15;
+        } else if (
+          (userBody === "intenso" && wineBody === "medio-alto") ||
+          (userBody === "medio" && wineBody === "medio-alto") ||
+          (userBody === "medio" && wineBody === "ligero")
         ) {
-          score += 3;
+          score += 8;
         }
 
-        if (
-          wine.characteristics?.sweetness?.toLowerCase() ===
-          answers.sweetness.toLowerCase()
-        ) {
-          score += 3;
+        // ==============================
+        // DULZOR — 15%
+        // ==============================
+
+        const wineSweetness = wine.characteristics?.sweetness?.toLowerCase();
+
+        const userSweetness = answers.sweetness?.toLowerCase();
+
+        if (wineSweetness === userSweetness) {
+          score += 15;
         }
+
+        // ==============================
+        // OCASIÓN — 20%
+        // ==============================
+
+        if (wine.occasions?.includes(answers.occasion)) {
+          score += 20;
+        }
+
+        // ==============================
+        // PRECIO — 30%
+        // ==============================
 
         const priceDifference = Math.abs(wine.price - answers.price);
 
-        const priceScore = Math.max(0, 3 - priceDifference / 10000);
+        const maxDifference = 30000;
+
+        const priceScore = Math.max(
+          0,
+          30 - (priceDifference / maxDifference) * 30
+        );
 
         score += priceScore;
 
         return {
           ...wine,
-          score,
+          score: Math.round(score),
         };
       })
       .sort((a, b) => b.score - a.score);
@@ -241,6 +207,12 @@ export default function WineRecommender() {
               <span className="wine-recommender__result-type">
                 {recommendedWine.type}
               </span>
+
+              <div className="wine-recommender__match">
+                <strong>{recommendedWine.score}%</strong>
+
+                <span>compatibilidad con tus preferencias</span>
+              </div>
 
               <h3>{recommendedWine.name}</h3>
 
@@ -407,8 +379,8 @@ export default function WineRecommender() {
                   }`}
                   onClick={() => selectAnswer("type", option.value)}
                 >
-                  <span className="wine-recommender__option-number">
-                    0{typeOptions.indexOf(option) + 1}
+                  <span className="wine-recommender__option-marker">
+                    <span />
                   </span>
 
                   <span>
@@ -438,8 +410,8 @@ export default function WineRecommender() {
                   }`}
                   onClick={() => selectAnswer("body", option.value)}
                 >
-                  <span className="wine-recommender__option-number">
-                    0{index + 1}
+                  <span className="wine-recommender__option-marker">
+                    <span />
                   </span>
 
                   <span>
@@ -469,13 +441,43 @@ export default function WineRecommender() {
                   }`}
                   onClick={() => selectAnswer("sweetness", option.value)}
                 >
-                  <span className="wine-recommender__option-number">
-                    0{index + 1}
+                  <span className="wine-recommender__option-marker">
+                    <span />
                   </span>
 
                   <span>
                     <strong>{option.label}</strong>
 
+                    <small>{option.description}</small>
+                  </span>
+
+                  <span className="wine-recommender__option-check">✓</span>
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* OCCASION */}
+
+          {currentStep.id === "occasion" && (
+            <div className="wine-recommender__options">
+              {occasionOptions.map((option, index) => (
+                <button
+                  key={option.value}
+                  type="button"
+                  className={`wine-recommender__option ${
+                    answers.occasion === option.value
+                      ? "wine-recommender__option--active"
+                      : ""
+                  }`}
+                  onClick={() => selectAnswer("occasion", option.value)}
+                >
+                  <span className="wine-recommender__option-marker">
+                    <span />
+                  </span>
+
+                  <span>
+                    <strong>{option.label}</strong>
                     <small>{option.description}</small>
                   </span>
 

@@ -204,12 +204,22 @@
   border-color: var(--color-primary);
 }
 
-.wine-recommender__option-number {
-  font-size: 10px;
+.wine-recommender__option-marker {
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
 
-  font-weight: 600;
-
-  color: var(--color-primary);
+.wine-recommender__option-marker span {
+  width: 4px;
+  height: 4px;
+  background: var(--color-primary);
+  border-radius: 50%;
 }
 
 .wine-recommender__option strong {
@@ -416,95 +426,142 @@
 }
 
 /* =========================================
-     RESULT CARD
-  ========================================= */
+   RESULT CARD
+========================================= */
 
 .wine-recommender__result {
-  display: grid;
+  width: 100%;
+  max-width: 900px;
 
-  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 40% 60%;
 
   background: #eee8e1;
 }
 
+/* IMAGE */
+
 .wine-recommender__result-image {
   position: relative;
 
-  min-height: 540px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  aspect-ratio: 1 / 1;
 
   overflow: hidden;
+
+  background: #ffffff;
 }
 
-.wine-recommender__result-image img {
-  object-fit: cover;
+.wine-recommender__result-image-img {
+  object-fit: contain;
+  padding: 30px;
 }
+
+/* INFO */
 
 .wine-recommender__result-info {
-  padding: 60px 50px;
+  padding: 42px 45px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
+/* TYPE */
+
 .wine-recommender__result-type {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 
-  font-size: 10px;
-
+  font-size: 9px;
   font-weight: 600;
 
-  letter-spacing: 2px;
+  letter-spacing: 0.2em;
 
   text-transform: uppercase;
 
   color: var(--color-primary);
 }
 
-.wine-recommender__result-info h3 {
-  margin-bottom: 8px;
+/* MATCH */
 
-  font-family: Georgia, "Times New Roman", serif;
+.wine-recommender__match {
+  display: flex;
+  align-items: baseline;
 
-  font-size: 45px;
+  gap: 6px;
 
-  font-weight: 400;
-
-  line-height: 1;
-
-  letter-spacing: -1.5px;
+  margin-bottom: 7px;
 }
 
-.wine-recommender__result-winery {
-  font-size: 13px;
+.wine-recommender__match strong {
+  font-size: 17px;
+  font-weight: 600;
+
+  color: var(--color-primary);
+}
+
+.wine-recommender__match span {
+  font-size: 11px;
 
   color: var(--color-text-light);
 }
 
+/* NAME */
+
+.wine-recommender__result-info h3 {
+  max-width: 430px;
+
+  margin: 0 0 6px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 36px;
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  letter-spacing: -1px;
+
+  color: var(--color-text);
+}
+
+/* WINERY */
+
+.wine-recommender__result-winery {
+  margin: 0;
+
+  font-size: 12px;
+
+  color: var(--color-text-light);
+}
+
+/* LINE */
+
 .wine-recommender__result-line {
-  width: 40px;
+  width: 32px;
   height: 1px;
 
-  margin: 28px 0;
+  margin: 22px 0;
 
   background: var(--color-primary);
 }
 
+/* DESCRIPTION */
+
 .wine-recommender__result-description {
-  max-width: 400px;
+  max-width: 390px;
 
-  margin-bottom: 35px;
+  margin: 0 0 28px;
 
-  font-size: 14px;
+  font-size: 13px;
 
-  line-height: 1.8;
+  line-height: 1.7;
 
   color: var(--color-text-light);
 }
+
+/* BOTTOM */
 
 .wine-recommender__result-bottom {
   display: flex;
@@ -515,33 +572,45 @@
 }
 
 .wine-recommender__result-bottom strong {
-  font-size: 23px;
+  font-size: 20px;
 
   font-weight: 500;
+
+  color: var(--color-text);
 }
 
-.wine-recommender__result-button {
-  min-height: 45px;
+/* BUTTON */
 
-  padding: 0 18px;
+.wine-recommender__result-button {
+  min-height: 40px;
+
+  padding: 0 16px;
 
   display: inline-flex;
   align-items: center;
 
-  gap: 10px;
+  gap: 8px;
 
-  font-size: 11px;
+  font-size: 10px;
 
   font-weight: 600;
+
+  text-decoration: none;
 
   color: #ffffff;
 
   background: var(--color-primary);
+
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.wine-recommender__result-button:hover {
+  transform: translateY(-1px);
 }
 
 .wine-recommender__result-button svg {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
 }
 
 /* =========================================
