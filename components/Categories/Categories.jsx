@@ -40,8 +40,28 @@ export default function Categories() {
           </div>
 
           <Link href="/catalogo" className="categories__all">
-            Ver todo
-            <span>↗</span>
+            <span>Ver todo</span>
+
+            <svg
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M2 8H13"
+                stroke="currentColor"
+                strokeWidth="1"
+                strokeLinecap="round"
+              />
+              <path
+                d="M9 4L13 8L9 12"
+                stroke="currentColor"
+                strokeWidth="1"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </Link>
         </div>
 
@@ -70,24 +90,24 @@ export default function Categories() {
                   <h3 className="category-card__title">{category.name}</h3>
                 </div>
 
-                <span className="category-card__arrow">
+                <span className="category-card__arrow" aria-hidden="true">
+                  <span>Ver</span>
+
                   <svg
-                    className="wine-detail__whatsapp-icon"
-                    viewBox="0 0 24 24"
+                    viewBox="0 0 16 16"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
                   >
                     <path
-                      d="M5 12H19"
+                      d="M2 8H13"
                       stroke="currentColor"
-                      strokeWidth="1.5"
+                      strokeWidth="1"
                       strokeLinecap="round"
                     />
                     <path
-                      d="M13 6L19 12L13 18"
+                      d="M9 4L13 8L9 12"
                       stroke="currentColor"
-                      strokeWidth="1.5"
+                      strokeWidth="1"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />

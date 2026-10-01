@@ -100,41 +100,43 @@
 }
 
 /* =========================================
-     ARROW
+     CARD VIEW
   ========================================= */
 
-.wine-card__arrow {
+.wine-card__view {
   position: absolute;
-
   right: 14px;
   bottom: 14px;
 
-  width: 34px;
-  height: 34px;
-
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 7px;
+
+  padding: 8px 11px;
 
   color: #ffffff;
+  background: rgba(80, 20, 30, 0.92);
 
-  background: var(--color-primary);
-
-  border-radius: 50%;
-
-  font-size: 15px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 
   opacity: 0;
-
-  transform: translate(5px, 5px);
+  transform: translateY(5px);
 
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-.wine-card:hover .wine-card__arrow {
-  opacity: 1;
+.wine-card__view svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
 
-  transform: translate(0, 0);
+.wine-card:hover .wine-card__view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* =========================================

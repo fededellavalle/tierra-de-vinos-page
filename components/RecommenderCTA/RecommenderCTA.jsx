@@ -24,8 +24,28 @@ export default function RecommenderCTA() {
           </p>
 
           <Link href="/recomendador" className="recommender-cta__button">
-            Encontrar mi vino
-            <span>↗</span>
+            <span>Encontrar mi vino</span>
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M4 12H19"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+              <path
+                d="M14 7L19 12L14 17"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </Link>
         </div>
 

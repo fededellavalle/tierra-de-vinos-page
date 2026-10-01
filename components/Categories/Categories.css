@@ -51,35 +51,36 @@
 .categories__all {
   display: inline-flex;
   align-items: center;
-
-  gap: 12px;
+  gap: 9px;
 
   padding-bottom: 7px;
 
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
+  letter-spacing: 0.04em;
 
   color: var(--color-primary);
-
   border-bottom: 1px solid var(--color-primary);
 
   white-space: nowrap;
 
-  transition: gap 0.2s ease, opacity 0.2s ease;
+  transition: gap 0.25s ease, opacity 0.25s ease;
 }
 
-.categories__all span {
-  font-size: 16px;
+.categories__all svg {
+  width: 13px;
+  height: 13px;
 
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease;
 }
 
 .categories__all:hover {
   opacity: 0.75;
+  gap: 12px;
 }
 
-.categories__all:hover span {
-  transform: translate(2px, -2px);
+.categories__all:hover svg {
+  transform: translateX(2px);
 }
 
 /* =========================================
@@ -217,29 +218,34 @@
 .category-card__arrow {
   flex-shrink: 0;
 
-  width: 38px;
-  height: 38px;
-
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 8px;
 
-  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.85);
 
-  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 
-  font-size: 17px;
+  transition: color 0.25s ease, gap 0.25s ease;
+}
 
-  transition: background 0.25s ease, border-color 0.25s ease,
-    transform 0.25s ease;
+.category-card__arrow svg {
+  width: 13px;
+  height: 13px;
+
+  transition: transform 0.25s ease;
 }
 
 .category-card:hover .category-card__arrow {
-  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  gap: 11px;
+}
 
-  border-color: rgba(255, 255, 255, 0.8);
-
-  transform: translate(2px, -2px);
+.category-card:hover .category-card__arrow svg {
+  transform: translateX(2px);
 }
 
 /* =========================================
