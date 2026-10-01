@@ -54,22 +54,31 @@ export default function Hero() {
               <span>No sé qué elegir</span>
 
               <svg
-                viewBox="0 0 20 20"
+                viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true"
               >
                 <path
-                  d="M10 2.5L11.2 7.8L16.5 9L11.2 10.2L10 15.5L8.8 10.2L3.5 9L8.8 7.8L10 2.5Z"
+                  d="M7 3H17V8C17 11.314 14.761 14 12 14C9.239 14 7 11.314 7 8V3Z"
                   stroke="currentColor"
-                  strokeWidth="1.2"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
                   strokeLinejoin="round"
                 />
+
                 <path
-                  d="M16 13.5L16.5 15.5L18.5 16L16.5 16.5L16 18.5L15.5 16.5L13.5 16L15.5 15.5L16 13.5Z"
+                  d="M12 14V20"
                   stroke="currentColor"
-                  strokeWidth="1.1"
-                  strokeLinejoin="round"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
+                />
+
+                <path
+                  d="M8.5 20H15.5"
+                  stroke="currentColor"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
                 />
               </svg>
             </Link>

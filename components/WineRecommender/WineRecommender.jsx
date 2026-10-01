@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 
 import wines from "../../data/wines";
@@ -31,6 +31,17 @@ export default function WineRecommender() {
   const [showResult, setShowResult] = useState(false);
 
   const currentStep = steps[step];
+
+  useEffect(() => {
+    if (recommenderRef.current) {
+      recommenderRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [step]);
+
+  const recommenderRef = useRef(null);
 
   const selectAnswer = (key, value) => {
     setAnswers((previous) => ({
@@ -314,7 +325,7 @@ export default function WineRecommender() {
   }
 
   return (
-    <section className="wine-recommender">
+    <section ref={recommenderRef} className="wine-recommender">
       <div className="wine-recommender__container">
         {/* INTRO */}
 

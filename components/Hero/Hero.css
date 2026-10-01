@@ -150,10 +150,10 @@
 }
 
 .hero__button--secondary svg {
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
 
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .hero__button--secondary:hover {
@@ -163,7 +163,7 @@
 }
 
 .hero__button--secondary:hover svg {
-  transform: rotate(8deg) scale(1.08);
+  transform: translateY(-1px);
 }
 
 /* =========================================
